@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+User name:<input type="text" [(ngModel)]='userName'placeholder="Search.." name="search">
+<button (click)="search()" type="submit"><i class="fa fa-search"></i></button>
+
+<div *ngIf="response">
+  <!-- <blockquote class="blockquote text-center">
+    <p class="mb-0">{{github.login}}</p>
+    <img src="{{github.avatar_url}}">
+  <footer class="blockquote-footer"><cite>{{github.avatar_url}}</cite></footer>
+  </blockquote> -->
+Username:<p>{{response.login}}</p>
+User's Id:<p>{{response.id}}</p>
+User's repository<p>{{response.public_repos}}</p>
+user's number of following:<p>{{response.following}}</p> 
+User's number of followers:<p>{{response.followers}}</p>
+  <p><img src="{{response.avatar_url}}"></p>
+
