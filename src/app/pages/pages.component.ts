@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Github } from '../github-class/github';
-import * as $ from 'jquery';
+import {environment } from '../../environments/environment';
+import {GithubRequestService} from '../github-http/github-request.service'
+import { Router } from '@angular/router';
+import {  ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
@@ -11,9 +14,14 @@ export class PagesComponent implements OnInit {
   github:Github;
   userName:string="";
   response:any;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private githubService:GithubRequestService) { 
+    
+  }
 
   ngOnInit() {
+    // let id = this.route.snapshot.paramMap.get('id');
+    // this.githubService.gitRequest(id);
+    // this.github = this.githubService.github
     interface ApiResponse{
       login:string;
       id:number;
@@ -22,6 +30,12 @@ export class PagesComponent implements OnInit {
       followers:number;
       following:number;
     }
+    // this.githubService.gitRequest()
+    // this.github=this.githubService.getGoal(id)
+
+
+
+    
   //   $(document).ready(function(){
   //     alert('I am Called From jQuery');
   //   });
@@ -33,10 +47,12 @@ export class PagesComponent implements OnInit {
   //   })
    
   }
-  
+
   search(){
+    // this.router.navigate(['/pages',id])
+    this.ngOnInit() ;
     let promise = new Promise((resolve,reject)=>{
-    this.http.get("https://api.github.com/users/"+this.userName+"?access_token=2e1ea0b8e0aad26082cffd6273909cd4877c0624").toPromise().then(response=>{
+    this.http.get("https://api.github.com/users/"+this.userName+"?access_token="+environment.api).toPromise().then(response=>{
       // Succesful API request
       this.response = response;
       console.log(this.response)
