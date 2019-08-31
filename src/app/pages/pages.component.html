@@ -3,6 +3,7 @@
 <br>
 User name:<input type="text" [(ngModel)]='userName'placeholder="Search.." name="search">
 <button (click)="search()" type="submit"><i class="fa fa-search"></i></button>
+<!-- <button (click)="repository()" type="submit"><i class="fa fa-search"></i></button> -->
 
 <div *ngIf="response">
   <!-- <blockquote class="blockquote text-center">
@@ -16,4 +17,8 @@ User's repository<p>{{response.public_repos}}</p>
 user's number of following:<p>{{response.following}}</p> 
 User's number of followers:<p>{{response.followers}}</p>
   <p><img src="{{response.avatar_url}}"></p>
-
+  <!-- repo:<a href="{{response.name}}">here</a> -->
+  <div *ngFor='let myVar of repo'>
+    <!-- this.response.push(repo) -->
+    <p>{{myVar.name}}</p>
+  </div>
