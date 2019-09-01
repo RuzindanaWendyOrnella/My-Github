@@ -1,13 +1,21 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container" >
     <div class="row" >
       <div class="col-md-6" >
+        <div style="background: black">
 <h1 style="text-align: center;font-family:'Courier New', Courier, monospace;color:white">Welcome To My GitPage</h1>
 <br>
 <h2 style="color: white">Enter Your github User name to receive your github's information</h2>
 <div style="text-align: center">
 <input type="text" [(ngModel)]='userName'placeholder="Search.." name="search">
-<button (click)="search()" type="submit"><i class="fa fa-search"></i></button>
+<button (click)="search()" type="submit" ><i class="fa fa-search"></i></button>
+</div>
 </div>
 <br><br><br>
 <!-- <button (click)="repository()" type="submit"><i class="fa fa-search"></i></button> -->
@@ -39,7 +47,7 @@ Your Followers Are:<p>{{response.followers}}</p>
 </div>
   <!-- repo:<a href="{{response.name}}">here</a> -->
   <h2 style="font-family: 'Courier New', Courier, monospace">Your Repositories</h2>
-  <div *ngFor='let myVar of repo'>
+  <div *ngFor='let myVar of repo' style="color: black">
     <!-- this.response.push(repo) -->
    <a href="{{response.html_url}}"><p appHighlight>{{myVar.name}}</p></a> 
   </div>
@@ -50,4 +58,4 @@ Your Followers Are:<p>{{response.followers}}</p>
   </div>
 </div>
 </div>
-<footer>Copyright github,All Rights Reserved</footer>
+<footer style="color: black;text-align: center;margin-top: 35%;background: gray">Copyright github,All Rights Reserved</footer>
