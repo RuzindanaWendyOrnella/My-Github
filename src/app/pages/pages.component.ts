@@ -8,6 +8,7 @@ import {  ActivatedRoute, ParamMap } from '@angular/router';
 import{ Repo } from '../repo'
 import { resolve, reject } from 'q';
 import { promise } from 'protractor';
+// import { Location } from '@angular/common';
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
@@ -58,26 +59,38 @@ export class PagesComponent implements OnInit {
   }
 
   search(id){
+   
     // this.router.navigate(['/pages',id])
     this.ngOnInit() ;
+     
     let promise = new Promise((resolve,reject)=>{
     this.http.get("https://api.github.com/users/"+this.userName+"?access_token="+environment.api).toPromise().then(response=>{
       // Succesful API request
+      
       this.response = response;
+     
       console.log(this.response)
+      
       resolve()
+   
+      
     },
     error=>{
       this.github.login="oups"
       reject(error)
+     
     })
-    })
+   
 
+    })
+  
     interface Api{
       name:string;
       description:string;
     }
+   
     promise=new Promise((resolve,reject)=>{
+     
       this.http.get("https://api.github.com/users/"+this.userName +"/repos?access_token="+environment.api).toPromise().then(response=>{
         for(var i in response){
           this.repo.push(new Repo(response[i].name))
@@ -95,6 +108,8 @@ export class PagesComponent implements OnInit {
     })
     console.log(this.repo);
       return promise;
+   
+
     }
   
   // repository(id){
@@ -121,7 +136,6 @@ export class PagesComponent implements OnInit {
   //   console.log(this.repo);
   //     return promise;
   //   }
-  
   
   
   }

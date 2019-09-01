@@ -4,30 +4,32 @@
       <div class="col-md-6" >
 <h1 style="text-align: center;font-family:'Courier New', Courier, monospace;color:white">Welcome To My GitPage</h1>
 <br>
-<h2>Enter Your github User name to receive your github's information</h2>
-<div style="text-align: center">
+<h2 style="color: white">Enter Your github User name to receive your github's information</h2>
+<div style="text-align: center;color: green">
 <input type="text" [(ngModel)]='userName'placeholder="Search.." name="search">
 <button (click)="search()" type="submit"><i class="fa fa-search"></i></button>
 </div>
+<br><br><br>
 <!-- <button (click)="repository()" type="submit"><i class="fa fa-search"></i></button> -->
 
 <div class="wendy">
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="col-sm-6">
     </div>
   </div>
-</div>
+</div> -->
+<p ><img style="border-radius:50%"src="{{response.avatar_url}}"></p>
 
-
-<div *ngIf="response"  class="jumbotron">
+<div class="you" *ngIf="response"  >
   <!-- <blockquote class="blockquote text-center">
     <p class="mb-0">{{github.login}}</p>
     <img src="{{github.avatar_url}}">
   <footer class="blockquote-footer"><cite>{{github.avatar_url}}</cite></footer>
   </blockquote> -->
-  <p ><img style="border-radius:50%"src="{{response.avatar_url}}"></p>
-  <div style="float: right;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+  <div class="jumbotron">
+  <div class="jumbotron" style="float: right;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+   <h2 style="font-family: 'Courier New', Courier, monospace">Your github information</h2>
 Your user name is:<p>{{response.login}}</p>
 Your user id is:<p>{{response.id}}</p>
 Your Repository number is<p>{{response.public_repos}}</p>
@@ -35,10 +37,12 @@ Those following Are:<p>{{response.following}}</p>
 Your Followers Are:<p>{{response.followers}}</p>
 </div>
   <!-- repo:<a href="{{response.name}}">here</a> -->
+  <h2 style="font-family: 'Courier New', Courier, monospace">Your Repositories</h2>
   <div *ngFor='let myVar of repo'>
     <!-- this.response.push(repo) -->
    <a href="{{response.html_url}}"><p>{{myVar.name}}</p></a> 
   </div>
+</div>
   <!-- {{github.completeDate|timeCounter}} -->
   </div>
   </div>

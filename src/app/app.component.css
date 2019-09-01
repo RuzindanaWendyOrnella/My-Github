@@ -1,9 +1,9 @@
-*{
+/* *{
     background: black;
-}
+} */
 .all{
     background:url('https://img.freepik.com/free-vector/dark-wall-background_1390-191.jpg?size=338&ext=jpg');
     background-size:cover; 
     color: white;
-    height: 900px;
+   
 }
