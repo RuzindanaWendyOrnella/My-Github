@@ -1,24 +1,46 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<img style='width:80%' src='https://techcrunch.com/wp-content/uploads/2019/01/IMG_20181016_092551.jpg?w=730&crop=1'>
+<div class="container" >
+    <div class="row" >
+      <div class="col-md-6" >
+<h1 style="text-align: center;font-family:'Courier New', Courier, monospace;color:white">Welcome To My GitPage</h1>
 <br>
-User name:<input type="text" [(ngModel)]='userName'placeholder="Search.." name="search">
+<h2>Enter Your github User name to receive your github's information</h2>
+<div style="text-align: center">
+<input type="text" [(ngModel)]='userName'placeholder="Search.." name="search">
 <button (click)="search()" type="submit"><i class="fa fa-search"></i></button>
+</div>
 <!-- <button (click)="repository()" type="submit"><i class="fa fa-search"></i></button> -->
 
-<div *ngIf="response">
+<div class="wendy">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="response"  class="jumbotron">
   <!-- <blockquote class="blockquote text-center">
     <p class="mb-0">{{github.login}}</p>
     <img src="{{github.avatar_url}}">
   <footer class="blockquote-footer"><cite>{{github.avatar_url}}</cite></footer>
   </blockquote> -->
-Username:<p>{{response.login}}</p>
-User's Id:<p>{{response.id}}</p>
-User's repository<p>{{response.public_repos}}</p>
-user's number of following:<p>{{response.following}}</p> 
-User's number of followers:<p>{{response.followers}}</p>
-  <p><img src="{{response.avatar_url}}"></p>
+  <p ><img style="border-radius:50%"src="{{response.avatar_url}}"></p>
+  <div style="float: right;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+Your user name is:<p>{{response.login}}</p>
+Your user id is:<p>{{response.id}}</p>
+Your Repository number is<p>{{response.public_repos}}</p>
+Those following Are:<p>{{response.following}}</p> 
+Your Followers Are:<p>{{response.followers}}</p>
+</div>
   <!-- repo:<a href="{{response.name}}">here</a> -->
   <div *ngFor='let myVar of repo'>
     <!-- this.response.push(repo) -->
-    <p>{{myVar.name}}</p>
+   <a href="{{response.html_url}}"><p>{{myVar.name}}</p></a> 
   </div>
+  <!-- {{github.completeDate|timeCounter}} -->
+  </div>
+  </div>
+  </div>
+</div>
