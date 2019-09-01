@@ -17,29 +17,7 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul> -->
-<div class="you" *ngIf="response"  class="jumbotron">
-  <!-- <blockquote class="blockquote text-center">
-    <p class="mb-0">{{github.login}}</p>
-    <img src="{{github.avatar_url}}">
-  <footer class="blockquote-footer"><cite>{{github.avatar_url}}</cite></footer>
-  </blockquote> -->
-  <p ><img style="border-radius:50%"src="{{response.avatar_url}}"></p>
-  <div style="float: right;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-Your user name is:<p>{{response.login}}</p>
-Your user id is:<p>{{response.id}}</p>
-Your Repository number is<p>{{response.public_repos}}</p>
-Those following Are:<p>{{response.following}}</p> 
-Your Followers Are:<p>{{response.followers}}</p>
-</div>
-  <!-- repo:<a href="{{response.name}}">here</a> -->
-  <div *ngFor='let myVar of repo'>
-    <!-- this.response.push(repo) -->
-   <a href="{{response.html_url}}"><p>{{myVar.name}}</p></a> 
-  </div>
-  <!-- {{github.completeDate|timeCounter}} -->
-  
-  </div>
-  
+
 
 <div class="all">
 <app-pages></app-pages>

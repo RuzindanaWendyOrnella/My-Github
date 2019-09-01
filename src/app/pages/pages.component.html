@@ -5,7 +5,7 @@
 <h1 style="text-align: center;font-family:'Courier New', Courier, monospace;color:white">Welcome To My GitPage</h1>
 <br>
 <h2 style="color: white">Enter Your github User name to receive your github's information</h2>
-<div style="text-align: center;color: green">
+<div style="text-align: center">
 <input type="text" [(ngModel)]='userName'placeholder="Search.." name="search">
 <button (click)="search()" type="submit"><i class="fa fa-search"></i></button>
 </div>
@@ -19,9 +19,10 @@
     </div>
   </div>
 </div> -->
-<p ><img style="border-radius:50%"src="{{response.avatar_url}}"></p>
+
 
 <div class="you" *ngIf="response"  >
+    <p ><img style="border-radius:50%"src="{{response.avatar_url}}"></p>
   <!-- <blockquote class="blockquote text-center">
     <p class="mb-0">{{github.login}}</p>
     <img src="{{github.avatar_url}}">
@@ -40,7 +41,7 @@ Your Followers Are:<p>{{response.followers}}</p>
   <h2 style="font-family: 'Courier New', Courier, monospace">Your Repositories</h2>
   <div *ngFor='let myVar of repo'>
     <!-- this.response.push(repo) -->
-   <a href="{{response.html_url}}"><p>{{myVar.name}}</p></a> 
+   <a href="{{response.html_url}}"><p appHighlight>{{myVar.name}}</p></a> 
   </div>
 </div>
   <!-- {{github.completeDate|timeCounter}} -->
@@ -48,3 +49,5 @@ Your Followers Are:<p>{{response.followers}}</p>
   </div>
   </div>
 </div>
+</div>
+<footer>Copyright github,All Rights Reserved</footer>
