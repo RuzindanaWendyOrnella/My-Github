@@ -2,7 +2,7 @@
 my github
 # {Brief description of project}
 this is a webpage where one gets to input their github username and get information about their github account including their repositories.
-22/07/2019
+01/09/2019
 #### By 
 Ruzindana Wendy Ornella,
 programmmer at wecode.
