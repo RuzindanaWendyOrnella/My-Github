@@ -27,13 +27,13 @@
       Your Repository number is<p>{{response.public_repos}}</p>
       Those following Are:<p>{{response.following}}</p> 
       Your Followers Are:<p>{{response.followers}}</p>
+      added on:<p>{{response.created_at|date}}</p>
       </div>
       <h2 style="font-family: 'Courier New', Courier, monospace">Your Repositories</h2>
       <div *ngFor='let myVar of repo' style="color: black">
       <a href="{{response.html_url}}"><p appHighlight>{{myVar.name}}</p></a> 
       </div>
       </div>
-  <!-- {{github.completeDate|timeCounter}} -->
       </div>
      </div>
     </div>

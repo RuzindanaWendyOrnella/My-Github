@@ -39,6 +39,8 @@ export class PagesComponent implements OnInit {
       followers:number;
       following:number;
       repos_url:string;
+      created_at:number;
+      
     }
     // this.githubService.gitRequest()
     // this.github=this.githubService.getGoal(id)
